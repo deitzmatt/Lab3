@@ -2,7 +2,7 @@ package example;
 
 import java.util.Random;
 
-public class Lab3QuizzUserTimed 
+public class Lab3QuizzWithQuit 
 {
 
 	private static String[] SHORT_NAMES = {"A","R","N","D","C","Q",
@@ -16,14 +16,8 @@ public class Lab3QuizzUserTimed
 	
 	public static void main(String[] args) 
 	{
-		long timeLimit;
-		try{
-			timeLimit = Long.parseLong(args[0].trim());
-		} catch (NumberFormatException nfe){
-			System.out.println("Number Format Exception. Default Time will be set to 30 seconds. \n"+nfe.getMessage());
-			timeLimit = 30*1000;
-		}
 		
+		long timeLimit = 30*1000;
 		int score = 0;
 		boolean flag = true;
 		
@@ -36,6 +30,11 @@ public class Lab3QuizzUserTimed
 			int currentRandom = random.nextInt(FULL_NAMES.length);
 			System.out.println(FULL_NAMES[currentRandom]);
 			String aString = System.console().readLine().toUpperCase();
+			if (aString.equals("QUIT")){
+				System.out.println("Exiting the program. Score ="+score+" ; Time= "+(System.currentTimeMillis()-startTime)/1000f+" seconds out of "+timeLimit/1000f);
+				System.exit(0);
+			}
+			
 			String aChar = ""+aString.charAt(0);
 			
 			if(aChar.equals(SHORT_NAMES[currentRandom])&&(System.currentTimeMillis()-startTime)<timeLimit)
