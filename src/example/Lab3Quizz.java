@@ -1,6 +1,7 @@
 package example;
 
 import java.util.Random;
+import java.util.Timer;
 
 public class Lab3Quizz 
 {
@@ -16,7 +17,8 @@ public class Lab3Quizz
 	
 	public static void main(String[] args) 
 	{
-		Random Random = new Random();
+		Random random = new Random();
+		Timer timer = new Timer();
 		
 	}
 
