@@ -2,7 +2,7 @@ package example;
 
 import java.util.Random;
 
-public class Lab3Quizz 
+public class Lab3QuizzUserTimed 
 {
 
 	private static String[] SHORT_NAMES = {"A","R","N","D","C","Q",
